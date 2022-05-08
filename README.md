@@ -6,9 +6,9 @@
 
 - `docker-compose build`
 
-### To create the database
+### To create the database and get dependencies
 
-- `docker-compose run web mix ecto.create`
+- `docker-compose run web mix ecto.setup`
 
 ## Starting the Application
 
