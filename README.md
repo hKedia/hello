@@ -2,7 +2,12 @@
 
 ## Docker Setup
 
+### To build the docker image
+
 - `docker-compose build`
+
+### To create the database
+
 - `docker-compose run web mix ecto.create`
 
 ## Starting the Application
