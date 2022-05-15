@@ -27,14 +27,12 @@ defmodule HelloWeb.CounterLive do
     """
   end
 
-  @doc """
-  handles the increment and decrement functions
-  """
   def handle_event("increment", _, socket) do
     old_count = socket.assigns.count
     new_count = old_count + 1
     socket = assign(socket, count: new_count)
 
+    # tuple data structure
     {:noreply, socket}
   end
 
