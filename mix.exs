@@ -1,8 +1,10 @@
 defmodule Hello.MixProject do
   use Mix.Project
 
+  # Defines the configuration of the project
   def project do
     [
+      # name of the application
       app: :hello,
       version: "0.1.0",
       elixir: "~> 1.12",

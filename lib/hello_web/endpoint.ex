@@ -1,4 +1,7 @@
 defmodule HelloWeb.Endpoint do
+  @moduledoc """
+  Starting point of our application
+  """
   use Phoenix.Endpoint, otp_app: :hello
 
   # The session will be stored in the cookie and signed,
