@@ -20,13 +20,21 @@ defmodule HelloWeb.CounterLive do
       <%= @count %>
     </h2>
     <button phx-click="increment">+</button>
-    <button>-</button>
+    <button phx-click="decrement">-</button>
     """
   end
 
   def handle_event("increment", _, socket) do
     old_count = socket.assigns.count
     new_count = old_count + 1
+    socket = assign(socket, count: new_count)
+
+    {:noreply, socket}
+  end
+
+  def handle_event("decrement", _, socket) do
+    old_count = socket.assigns.count
+    new_count = old_count - 1
     socket = assign(socket, count: new_count)
 
     {:noreply, socket}
