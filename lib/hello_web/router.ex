@@ -19,6 +19,7 @@ defmodule HelloWeb.Router do
 
     get "/", PageController, :index
     live "/counter", CounterLive
+    live "/alarm",AlarmLive
   end
 
   # Other scopes may use custom stacks.
