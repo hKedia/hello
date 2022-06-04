@@ -1,23 +1,5 @@
 # Hello
 
-## Docker Setup
-
-### To build the docker image
-
-- `docker-compose build`
-
-### To create the database and get dependencies
-
-- `docker-compose run web mix ecto.setup`
-
-## Starting the Application
-
-- `docker-compose up`
-
-## Stopping the Application
-
-- `docker-compose down`
-
 To start your Phoenix server:
 
 - Install dependencies with `mix deps.get`
@@ -35,3 +17,21 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - Docs: https://hexdocs.pm/phoenix
 - Forum: https://elixirforum.com/c/phoenix-forum
 - Source: https://github.com/phoenixframework/phoenix
+
+<!-- ## Docker Setup
+
+### To build the docker image
+
+- `docker-compose build`
+
+### To create the database and get dependencies
+
+- `docker-compose run web mix ecto.setup`
+
+## Starting the Application
+
+- `docker-compose up`
+
+## Stopping the Application
+
+- `docker-compose down` -->
