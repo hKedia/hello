@@ -32,3 +32,5 @@ hello-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore the environment variable file
+.env
