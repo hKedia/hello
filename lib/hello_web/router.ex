@@ -19,7 +19,22 @@ defmodule HelloWeb.Router do
 
     get "/", PageController, :index
     live "/counter", CounterLive
-    live "/alarm",AlarmLive
+    live "/alarm", AlarmLive
+
+    # route to view all todos
+    live "/todos", TodoLive.Index, :index
+
+    # route to create a new todo - [Create]
+    live "/todos/new", TodoLive.Index, :new
+
+    # route to edit a todo - [Update] [Delete]
+    live "/todos/:id/edit", TodoLive.Index, :edit
+
+    # route to view a todo - [Read]
+    live "/todos/:id", TodoLive.Show, :show
+
+    # route to edit a todo - [Update]
+    live "/todos/:id/show/edit", TodoLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

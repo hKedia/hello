@@ -13,20 +13,6 @@ defmodule HelloWeb.CounterLive do
     {:ok, socket}
   end
 
-  @doc """
-  render gets called after mount and also after handle_event
-  """
-  def render(assigns) do
-    ~H"""
-    <h1>A Simple Counter</h1>
-    <h2>
-      <%= @count %>
-    </h2>
-    <button phx-click="increment">+</button>
-    <button phx-click="decrement">-</button>
-    """
-  end
-
   def handle_event("increment", _, socket) do
     old_count = socket.assigns.count
     new_count = old_count + 1
