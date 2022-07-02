@@ -1,5 +1,11 @@
-<h1>Listing Todos</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<h1>List of all Todos <span class="material-symbols-outlined">event_note</span></h1>
+<h3>The easiest way to keep track of the stuff you want </h3>
 
+<span class="material-symbols-outlined">edit</span>
+<span class="material-symbols-outlined">delete</span>
+<span class="material-symbols-outlined">edit</span>
 <%= if @live_action in [:new, :edit] do %>
   <.modal return_to={Routes.todo_index_path(@socket, :index)}>
     <.live_component
@@ -31,7 +37,7 @@
         <td><%= todo.completed %></td>
 
         <td>
-          <span><%= live_redirect "Show", to: Routes.todo_show_path(@socket, :show, todo) %></span>
+          <span ><%= live_redirect "Show", to: Routes.todo_show_path(@socket, :show, todo) %></span>
           <span><%= live_patch "Edit", to: Routes.todo_index_path(@socket, :edit, todo) %></span>
           <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: todo.id, data: [confirm: "Are you sure?"] %></span>
         </td>
@@ -40,4 +46,5 @@
   </tbody>
 </table>
 
-<span><%= live_patch "New Todo", to: Routes.todo_index_path(@socket, :new) %></span>
+<span><%= live_patch "New Todo", to: Routes.todo_index_path(@socket, :new),class: 
+"button" %></span>

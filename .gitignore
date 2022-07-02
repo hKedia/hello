@@ -34,3 +34,5 @@ npm-debug.log
 
 # Ignore the environment variable file
 .env
+
+.vs
