@@ -3,9 +3,6 @@
 <h1>List of all Todos <span class="material-symbols-outlined">event_note</span></h1>
 <h3>The easiest way to keep track of the stuff you want </h3>
 
-<span class="material-symbols-outlined">edit</span>
-<span class="material-symbols-outlined">delete</span>
-<span class="material-symbols-outlined">edit</span>
 <%= if @live_action in [:new, :edit] do %>
   <.modal return_to={Routes.todo_index_path(@socket, :index)}>
     <.live_component
@@ -38,8 +35,12 @@
 
         <td>
           <span ><%= live_redirect "Show", to: Routes.todo_show_path(@socket, :show, todo) %></span>
-          <span><%= live_patch "Edit", to: Routes.todo_index_path(@socket, :edit, todo) %></span>
-          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: todo.id, data: [confirm: "Are you sure?"] %></span>
+          <span class="todo-edit-controls"><%= live_patch "Edit", to: Routes.todo_index_path(@socket, :edit, todo) %>
+            <span class="material-symbols-outlined">edit</span>
+          </span>
+          <span class="todo-delete-controls"><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: todo.id, data: [confirm: "Are you sure?"] %>
+            <span class="material-symbols-outlined">delete</span>
+          </span>
         </td>
       </tr>
     <% end %>
