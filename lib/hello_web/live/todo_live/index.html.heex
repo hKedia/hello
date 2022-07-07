@@ -34,18 +34,18 @@
         <td><%= todo.completed %></td>
 
         <td>
-          <span ><%= live_redirect "Show", to: Routes.todo_show_path(@socket, :show, todo) %></span>
+          <span class="todo-show-controls" ><%= live_redirect "Show", to: Routes.todo_show_path(@socket, :show, todo) %>
+          <span class="material-symbols-outlined">visibility</span>
+          </span>
           <span class="todo-edit-controls"><%= live_patch "Edit", to: Routes.todo_index_path(@socket, :edit, todo) %>
             <span class="material-symbols-outlined">edit</span>
           </span>
           <span class="todo-delete-controls"><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: todo.id, data: [confirm: "Are you sure?"] %>
-            <span class="material-symbols-outlined">delete</span>
-          </span>
+            <span class="material-symbols-outlined">delete</span></span>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<span><%= live_patch "New Todo", to: Routes.todo_index_path(@socket, :new),class: 
-"button" %></span>
+<span class="create-todos"><%= live_patch "Create Todos +", to: Routes.todo_index_path(@socket, :new),class: "button" %></span>
