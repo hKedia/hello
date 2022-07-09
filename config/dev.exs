@@ -21,6 +21,8 @@ config :hello, HelloWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "HdKzPld9N8k0eArcsv7/UQppNWz3777kUh+4YfvLWnc1ypJkLFpinoiNlddM3Uoa",
   watchers: [
+    # Watch for changes in css files
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
