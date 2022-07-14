@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-<h1>Show Todo</h1>
+<h1 class="font-bold underline decoration-wavy">Show Todo</h1>
 
 <%= if @live_action in [:edit] do %>
   <.modal return_to={Routes.todo_show_path(@socket, :show, @todo)}>
@@ -15,25 +13,25 @@
   </.modal>
 <% end %>
 
-<ul style="list-style-type: none;">
+<ul class="p-2 m-2">
 
-  <li>
+  <li class="m-2 p-2">
     <strong>Title:</strong>
     <%= @todo.title %>
 </li>
 
-  <li>
+  <li class="m-2 p-2">
     <strong>Description:</strong>
     <%= @todo.description %>
   </li>
 
-  <li>
+  <li class="m-2 p-2">
     <strong>Completed:</strong>
     <%= @todo.completed %>
   </li>
 
 </ul>
 
-<span><%= live_patch "Edit", to: Routes.todo_show_path(@socket, :edit, @todo), class: "button" %></span>
+<span class="p-2 border rounded border-purple-700 hover:font-bold"><%= live_patch "Edit", to: Routes.todo_show_path(@socket, :edit, @todo), class: "button" %></span>
  
-<span><%= live_redirect "Back", to: Routes.todo_index_path(@socket, :index), class: "button" %></span>
+<span class="p-2 border rounded border-purple-700 hover:font-bold"><%= live_redirect "Back", to: Routes.todo_index_path(@socket, :index), class: "button" %></span>

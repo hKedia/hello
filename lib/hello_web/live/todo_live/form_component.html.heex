@@ -1,5 +1,5 @@
-<div>
-  <h2><%= @title %></h2>
+<div class="p-2 m-2 space-y-4">
+  <h2 class="font-bold"><%= @title %></h2>
 
   <.form
     let={f}
@@ -7,21 +7,22 @@
     id="todo-form"
     phx-target={@myself}
     phx-change="validate"
-    phx-submit="save">
+    phx-submit="save"
+    >
   
     <%= label f, :title %>
     <%= text_input f, :title %>
     <%= error_tag f, :title %>
-  
+  <br>
     <%= label f, :description %>
     <%= text_input f, :description %>
     <%= error_tag f, :description %>
-  
+  <br>
     <%= label f, :completed %>
     <%= checkbox f, :completed %>
     <%= error_tag f, :completed %>
-  
-    <div>
+  <br>
+    <div class="p-2 font-bold space-y-4">
       <%= submit "Save", phx_disable_with: "Saving..." %>
     </div>
   </.form>
