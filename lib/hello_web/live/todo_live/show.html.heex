@@ -1,4 +1,4 @@
-<h1 class="font-bold underline decoration-wavy">Show Todo</h1>
+<h1 class="font-bold underline decoration-wavy m-2 p-2 text-4xl">Show Todo</h1>
 
 <%= if @live_action in [:edit] do %>
   <.modal return_to={Routes.todo_show_path(@socket, :show, @todo)}>
@@ -15,17 +15,17 @@
 
 <ul class="p-2 m-2">
 
-  <li class="m-2 p-2">
+  <li class="p-4">
     <strong>Title:</strong>
     <%= @todo.title %>
 </li>
 
-  <li class="m-2 p-2">
+  <li class="p-4">
     <strong>Description:</strong>
     <%= @todo.description %>
   </li>
 
-  <li class="m-2 p-2">
+  <li class="p-4">
     <strong>Completed:</strong>
     <%= @todo.completed %>
   </li>

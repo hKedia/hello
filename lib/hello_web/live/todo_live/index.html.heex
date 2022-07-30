@@ -1,5 +1,5 @@
-<p class="font-bold p-4 m-4 text-6xl">List of all Todos</p>
-<h3 class="p-2 m-2 " >The easiest way to keep track of the stuff you want </h3>
+<p class="font-bold p-4 m-4 text-6xl font-mono decoration-double">List of all Todos</p>
+<h1 class="p-2 m-2 font-bold " >The easiest way to keep track of the stuff you want </h1>
 
 <%= if @live_action in [:new, :edit] do %>
   <.modal return_to={Routes.todo_index_path(@socket, :index)}>
@@ -14,7 +14,7 @@
   </.modal>
 <% end %>
 
-<table class="bg-teal-50 table-auto m-4">
+<table class="bg-cyan-200 table-auto m-4">
   <thead>
     <tr>
       <th>Title</th>
@@ -43,4 +43,5 @@
   </tbody>
 </table>
 
-<span class="p-2 border rounded border-purple-700 bg-indigo-500 hover:font-bold" ><%= live_patch "Create Todos +", to: Routes.todo_index_path(@socket, :new),class: "button" %></span>
+<span class="p-2 border rounded border-purple-700 bg-cyan-400 hover:font-bold"  ><%= live_patch "Create Todos +", to: Routes.todo_index_path(@socket, :new),class: "button" %></span>
+

@@ -9,20 +9,22 @@
     phx-change="validate"
     phx-submit="save"
     >
-  
+  <div class="p-2 m-2">
     <%= label f, :title %>
     <%= text_input f, :title %>
     <%= error_tag f, :title %>
-  <br>
+    </div>
+  <div class="p-2 m-2">
     <%= label f, :description %>
     <%= text_input f, :description %>
     <%= error_tag f, :description %>
-  <br>
+  </div>
+  <div class="p-2 m-2">
     <%= label f, :completed %>
     <%= checkbox f, :completed %>
     <%= error_tag f, :completed %>
-  <br>
-    <div class="p-2 font-bold space-y-4">
+  </div>
+    <div class="p-2 hover:font-bold">
       <%= submit "Save", phx_disable_with: "Saving..." %>
     </div>
   </.form>
