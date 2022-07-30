@@ -1,5 +1,5 @@
-<h1>List of all Todos <span class="material-symbols-outlined">event_note</span></h1>
-<h3>The easiest way to keep track of the stuff you want </h3>
+<p class="font-bold p-4 m-4 text-6xl font-mono decoration-double">List of all Todos</p>
+<h1 class="p-2 m-2 font-bold " >The easiest way to keep track of the stuff you want </h1>
 
 <%= if @live_action in [:new, :edit] do %>
   <.modal return_to={Routes.todo_index_path(@socket, :index)}>
@@ -14,7 +14,7 @@
   </.modal>
 <% end %>
 
-<table class="bg-teal-50 table-auto m-4">
+<table class="bg-cyan-200 table-auto m-4">
   <thead>
     <tr>
       <th>Title</th>
@@ -27,20 +27,21 @@
   <tbody id="todos">
     <%= for todo <- @todos do %>
       <tr id={"todo-#{todo.id}"}>
-        <td><%= todo.title %></td>
-        <td><%= todo.description %></td>
-        <td><%= todo.completed %></td>
+        <td class="m-4 p-4"><%= todo.title %></td>
+        <td class="m-4 p-4"><%= todo.description %></td>
+        <td class="m-4 p-4"><%= todo.completed %></td>
 
         <td class="space-x-2">
-          <span class="p-2 border rounded border-red-400"><%= live_redirect "Show", to: Routes.todo_show_path(@socket, :show, todo) %>
+          <span class="p-2 border rounded border-red-400 hover:font-bold"><%= live_redirect "Show", to: Routes.todo_show_path(@socket, :show, todo) %>
           </span>
-          <span class="p-2 border rounded border-orange-400"><%= live_patch "Edit", to: Routes.todo_index_path(@socket, :edit, todo) %>
+          <span class="p-2 border rounded border-orange-400 hover:font-bold"><%= live_patch "Edit", to: Routes.todo_index_path(@socket, :edit, todo) %>
           </span>
-          <span class="p-2 border rounded border-lime-400"><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: todo.id, data: [confirm: "Are you sure?"] %></span>
+          <span class="p-2 border rounded border-lime-400 hover:font-bold"><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: todo.id, data: [confirm: "Are you sure?"] %></span>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<span class="p-4 border rounded border-purple-700"><%= live_patch "Create Todos +", to: Routes.todo_index_path(@socket, :new),class: "button" %></span>
+<span class="p-2 border rounded border-purple-700 bg-cyan-400 hover:font-bold"  ><%= live_patch "Create Todos +", to: Routes.todo_index_path(@socket, :new),class: "button" %></span>
+
