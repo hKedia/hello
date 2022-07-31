@@ -1,0 +1,12 @@
+# Basics
+
+## Section
+
+```elixir
+a = "megha"
+String.upcase(a)
+```
+
+```elixir
+String.reverse("reverse this")
+```
