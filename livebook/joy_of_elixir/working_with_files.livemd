@@ -1,0 +1,11 @@
+# Working with files
+
+```elixir
+import Kernel
+```
+
+## Section
+
+```elixir
+{:ok, contents} = File.read("haiku.txt")
+```
